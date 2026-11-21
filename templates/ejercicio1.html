@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <div>
+        <h1>Ejercicio 1</h1>
+    </div>
+    <div class="formulario">
+        <h2>Formulario de Notas</h2>
+        <form action="/ejercicio1" method="post">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" min="10" max="70" name="nota1" id="nota1">
+            <label for="nota2">Nota 2:</label>
+            <input type="number" min="10" max="70" name="nota2" id="nota2">
+            <label for="nota3">Nota 3:</label>
+            <input type="number" min="10" max="70" name="nota3" id="nota3">
+            <label for="asistencia">Asistencia (%):</label>
+            <input type="number" min="0" max="100" name="asistencia" id="asistencia">
+            <br>
+            <button type="submit" class="boton enviar">Enviar</button>
+        </form>
+        {% if promedio %}
+        <div>
+            <p>El promedio es: {{ promedio }}</p>
+            <p>El estado es: {{ estado }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="volver">
+        <a href="/">Volver al inicio</a>
+    </div>
+</body>
+</html>
